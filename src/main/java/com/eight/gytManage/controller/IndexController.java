@@ -21,4 +21,9 @@ public class IndexController {
     public String toIndexPage(){
         return "index";
     }
+
+    @RequestMapping("/sourceManage")
+    public String toSourceManagePage(){
+        return "/infoManage/sourceManage";
+    }
 }

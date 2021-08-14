@@ -1,4 +1,61 @@
-.body{
-    background: #f7efab;
+body{
+    background: #F7EFEB;
+}
+.top-back{
+    height: 20px;
+    background: url("/eight/static/project/images/new/top.png") #5b4622;
+}
+.header{
+    background-color: #5b4622;
+    width: 100%;
+    margin: 0;
+}
+
+.main-body{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.menu-bar{
+    height: 455px;
+    width: 185px;
+    border-left: 3px solid #EEA987;
+    border-right: 3px solid #EEA987;
+    padding: 0 10px;
     
+}
+.menu-title{
+    width: 181px;
+    height: 40px;
+    line-height: 40px;
+    background: url("/eight/static/project/images/new/title.png") no-repeat;
+    margin-left: -10px;
+}
+
+
+.menu dd{
+    width: 161px;
+    height: 30px;
+    line-height: 30px;
+    background: url("/eight/static/project/images/new/default.png") no-repeat;
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+.menu-selected{
+    color: #fff;
+    background: url("/eight/static/project/images/new/hover.png") no-repeat !important;
+    background-size: 100% 100%;
+}
+
+.menu-bottom{
+    width: 181px;
+    height: 20px;
+    background: url("/eight/static/project/images/new/bottom.png") no-repeat !important;
+    margin-left: -10px;
+}
+#main-content{
+    width: 100%;
+    height: 100%;
 }
