@@ -5,5 +5,5 @@ package com.eight.gytManage.controller;
  * @Create 2021/8/14 11:37
  * @Version 1.0
  */
-public class a {
+public class UserController {
 }

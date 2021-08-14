@@ -5,5 +5,5 @@ package com.eight.gytManage.service.impl;
  * @Create 2021/8/14 11:36
  * @Version 1.0
  */
-public class aa {
+public class UserServiceImpl {
 }
