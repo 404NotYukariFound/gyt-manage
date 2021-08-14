@@ -1,7 +1,6 @@
 package com.eight.gytManage.pojo;
 
 
-import [B;
 import java.sql.Timestamp;
 
 
@@ -36,7 +35,7 @@ public class TbNatmehaHospital {
 	// 医院详细地址
 	private String hospitaladress;
 	// 简介
-	private [B introduce;
+	private byte[] introduce;
 	// 数据状态
 	private String status;
 	// 创建者
@@ -53,7 +52,7 @@ public class TbNatmehaHospital {
 	}
 
 	// 有参构造器，进行属性值的初始化
-	public TbNatmehaHospital(Long itemid, String itemcode, String hospitalName, String hospitalLevel, Integer hospitalBooking, Double hospitalSource, Integer hospitalDistance, String hospitalPhone, String hospitalPro, String hospitalCity, String hospitalCountry, String hospitaladress, [B introduce, String status, String creater, Timestamp itemcreateat, String updater, Timestamp itemupdateat) {
+	public TbNatmehaHospital(Long itemid, String itemcode, String hospitalName, String hospitalLevel, Integer hospitalBooking, Double hospitalSource, Integer hospitalDistance, String hospitalPhone, String hospitalPro, String hospitalCity, String hospitalCountry, String hospitaladress, byte[] introduce, String status, String creater, Timestamp itemcreateat, String updater, Timestamp itemupdateat) {
 		this.itemid = itemid;
 		this.itemcode = itemcode;
 		this.hospitalName = hospitalName;
@@ -195,12 +194,12 @@ public class TbNatmehaHospital {
 	}
 
 	// 获取 简介 的属性值
-	public [B getIntroduce() {
+	public byte[] getIntroduce() {
 		return introduce;
 	}
 
 	// 设置 简介 的属性值
-	public void setIntroduce([B introduce) {
+	public void setIntroduce(byte[] introduce) {
 		this.introduce = introduce;
 	}
 

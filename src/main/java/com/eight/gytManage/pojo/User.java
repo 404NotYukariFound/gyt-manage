@@ -1,7 +1,5 @@
 package com.eight.gytManage.pojo;
 
-
-import [B;
 import java.sql.Timestamp;
 import java.sql.Date;
 
@@ -29,7 +27,7 @@ public class User {
 	// 性别
 	private String gender;
 	// 肖像
-	private [B portrait;
+	private byte[] portrait;
 	// 身份证件类型
 	private String idcardType;
 	// 证件号码
@@ -62,7 +60,7 @@ public class User {
 	}
 
 	// 有参构造器，进行属性值的初始化
-	public User(Long itemid, String itemcode, String orgCode, String username, String password, String salt, String name, String gender, [B portrait, String idcardType, String idcardNo, String email, String state, String mobilephone, String creater, Timestamp itemcreateat, String updater, Timestamp itemupdateat, String cityid, Integer type, Date birth, String wxOpenid) {
+	public User(Long itemid, String itemcode, String orgCode, String username, String password, String salt, String name, String gender, byte[] portrait, String idcardType, String idcardNo, String email, String state, String mobilephone, String creater, Timestamp itemcreateat, String updater, Timestamp itemupdateat, String cityid, Integer type, Date birth, String wxOpenid) {
 		this.itemid = itemid;
 		this.itemcode = itemcode;
 		this.orgCode = orgCode;
@@ -168,12 +166,12 @@ public class User {
 	}
 
 	// 获取 肖像 的属性值
-	public [B getPortrait() {
+	public byte[] getPortrait() {
 		return portrait;
 	}
 
 	// 设置 肖像 的属性值
-	public void setPortrait([B portrait) {
+	public void setPortrait(byte[] portrait) {
 		this.portrait = portrait;
 	}
 
