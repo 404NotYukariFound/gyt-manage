@@ -9,12 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version 1.0
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/eight")
 public class IndexController {
     
-    @RequestMapping("/")
+    @RequestMapping({"/","/login"})
     public String toLoginPage(){
-        return "index";
+        return "userLoginAndReg/loginUser";
+    }
+
+    @RequestMapping("/register")
+    public String toRegisterPage(){
+        return "userLoginAndReg/registerUser";
     }
 
     @RequestMapping("/index")

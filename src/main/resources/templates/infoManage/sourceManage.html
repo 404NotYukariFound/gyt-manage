@@ -2,11 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap@4.5.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap@4.5.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/project/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/project/css/paginationTool.css}">
     <style>
-        .modal-body{
-            padding-bottom: 0;
+        body{
+            width: 1427px;
+            box-sizing: border-box;
         }
+        
         #statusSelect {
             height: 39px;
             padding-top: 5px;
@@ -21,18 +25,59 @@
         input[type="number"] {
             -moz-appearance: textfield;
         }
-
+        .content{
+            padding: 10px;
+        }
+        #table{
+            width: 100%;
+        }
+        .t-head{
+            background: url("/project/images/new/tableDefault.png") no-repeat;
+            background-size: 100% 30px;
+            color: #666;
+            margin-left: 2px;
+            width: 100%;
+        }
+        tr{
+            height: 30px;
+            line-height: 30px;
+        }
+        .t-head th,td{
+            width: 16.6%;
+            text-align: center;
+        }
+        .t-content-even,.t-content-odd{
+            width: 100%;
+            margin-left: 2px;
+        }
+        .t-content-odd{
+            background: #F7EFEB;
+        }
+        .delete{
+            color: red;
+        }
+        .update,.delete{
+            cursor: pointer;
+        }
+        .ts-page{
+            position: absolute;
+            padding-left: 20px;
+            bottom: -50px;
+        }
     </style>
 </head>
 <body>
 <div id="fir_body">
-    <div class="row test-border" id="accordion2" >
+    <div class="row test-border ml-4 mt-4" id="accordion2" >
         <div class="col-lg-4 col-md-4" >
             <div class="input-group mb-4" >
                 <div class="input-group-prepend" style="position: relative;top: 7px;">
-                    <span class="input-text" >年份：</span>
+                    <span class="input-text">年份：</span>
                 </div>
-                <select  class="custom-select" id="yearSelect" ></select>
+                <select class="custom-select" id="yearSelect">
+                    
+                </select>
+                
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
@@ -40,27 +85,39 @@
                 <div class="input-group-prepend" style="position: relative;top: 7px;">
                     <span class="input-text" >状态：</span>
                 </div>
-                <select class="custom-select" id="statusSelect" ></select>
+                <select class="custom-select" id="statusSelect" >
+                    <option value="生效">生效</option>
+                    <option value="不生效">不生效</option>
+                </select>
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="btnSearch" style="z-index: 1;">搜索</span>
+                    <span class="input-group-text" id="btn-search" style="z-index: 1;">搜索</span>
                 </div>
             </div>
         </div>
 
-
-        <div class="col-lg-2 col-md-2"></div>
-        <div class="col-lg-2 col-md-2" >
-            <button type="button" id="btn_addTask" class="btn btn-danger ml-3" style="display: none">维护专家号源</button>
-        </div>
+        
     </div>
-
-    <div class="col-lg-12" style="border-top: 10px solid #f7efeb;">
-        <table id="table"></table>
+    <div class="col-lg-2 col-md-2 mt-2" >
+        <button type="button" id="btn_addTask" class="btn btn-danger ml-3">维护专家号源</button>
     </div>
-
-
-
+    <div class="mt-3 content" style="border-top: 10px solid #f7efeb;">
+        <table id="table">
+           <tr class="row t-head">
+               <th>序号</th>
+               <th>出诊日期</th>
+               <th>医生姓名</th>
+               <th>号别</th>
+               <th>状态</th>
+               <th>操作</th>
+           </tr>
+        </table>
+    </div>
+   
+    <div class="ts-page"></div>
 </div>
 
+<script type="text/javascript" src="/plugins/require@2.3.6/require-2.3.6.js"></script>
+<script src="/main/main.js"></script>
+<script src="/project/js/infoManage/sourceManage.js"></script>
 </body>
 </html>

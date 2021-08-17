@@ -91,7 +91,11 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-       
+        <dependency>
+            <groupId>com.eight</groupId>
+            <artifactId>dbdtobean-spring-boot-starter</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
     <build>

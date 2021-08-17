@@ -48,17 +48,18 @@
     }
 //	应用组件相关配置
     require.config({
+        baseUrl: "../",
         paths: {
-            //pluguns
+            //plugins
             "jquery": '../plugins/jquery@3.5.1/jquery.min',
             "bootstrap": '../plugins/bootstrap@4.5.2/js/bootstrap.min',
-
+            
             //utils
-
+            "page" :'../utils/page',
             //project
             "index": '../project/js/index',
+            "sourceManage": '../project/js/infoManage/sourceManage',
            
-
         },
         waitSeconds: 0,
         map: {
@@ -67,5 +68,4 @@
             }
         }
     });
-   
 })();

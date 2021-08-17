@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>国医堂惠民信息系统</title>
-    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap@4.5.2/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/static/project/css/reset.css}">
-    <link rel="stylesheet" th:href="@{/static/project/css/index.css}">
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap@4.5.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/project/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/project/css/index.css}">
 </head>
 <body>
     <div class=""></div>
@@ -24,7 +24,7 @@
                             </a>
                         </li>
                         <li class="nav-item ml-1">
-                            <div th:style="'background: url(' + '/eight/static/project/images/new/head.png' + ');width: 25px;position: relative;height: 25px;top: 6px;'"></div>
+                            <div th:style="'background: url(' + '/project/images/new/head.png' + ');width: 25px;position: relative;height: 25px;top: 6px;'"></div>
                         </li>
                         <li class="nav-item dropdown ml-3">
                             <a class="nav-item nav-link  mr-md-2 text-white" id="usermsg">
@@ -57,7 +57,7 @@
                </dl>
                 <dl class="mt-md-n2">
                     <dt class="menu-title text-center mt-2 mt-0">信息管理</dt>
-                    <dd id="resource-manage" class="text-center mt-0">号源管理</dd>
+                    <dd id="resource-manage" class="menu-selected text-center mt-0">号源管理</dd>
                     <dd id="service-team" class="text-center">服务团队</dd>
                     <dd id="carry-project" class="text-center">开展项目</dd>
                     <dd id="efficacy-features" class="text-center">功效特色</dd>
@@ -67,14 +67,14 @@
             <div class="menu-bottom "></div>
         </div>
 
-        <div id="main-content" class="mt-2 ml-4">
-            <iframe src="" frameborder="0" scrolling="no" style="width:100%;height:670px;"></iframe>
+        <div id="main-content">
+            <iframe src="/eight/sourceManage" frameborder="0" style="width:100%;height:670px;"></iframe>
         </div>
     </div>
 </body>
 
-<script type="text/javascript" data-main="/eight/static/main/main" src="/eight/static/plugins/require@2.3.6/require-2.3.6.js"></script>
-<script type="text/javascript" data-main="/eight/static/main/main" src="/eight/static/plugins/jquery@3.5.1/jquery.js"></script>
-<script src="/eight/static/project/js/index.js"></script>
+<script type="text/javascript" data-main="/main/main" src="/plugins/require@2.3.6/require-2.3.6.js"></script>
+<script type="text/javascript" data-main="/main/main" src="/plugins/jquery@3.5.1/jquery.js"></script>
+<script src="/project/js/index.js"></script>
 
 </html>

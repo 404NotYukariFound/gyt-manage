@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eight.gytManage.mapper.IResourceMapper">
+
+    <sql id="column">
+        itemID, itemCode, DOCTOR_CODE, REGISTER_TYPE, REGISTER_DATE, REGISTER_COUNT, `STATUS`,
+        USER_CODE, CREATER, itemCreateAt, UPDATER, itemUpdateAt
+    </sql>
+    <update id="updateSignalSourcePage">
+        update tb_natmeha_signal_source
+        <set>
+            <if test="doctorCode != null">
+                DOCTOR_CODE = #{doctorCode,jdbcType=CHAR},
+            </if>
+            <if test="registerType != null">
+                REGISTER_TYPE = #{registerType,jdbcType=VARCHAR},
+            </if>
+            <if test="registerDate != null">
+                REGISTER_DATE = #{registerDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="registerCount != null">
+                REGISTER_COUNT = #{registerCount,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                `STATUS` = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="userCode != null">
+                USER_CODE = #{userCode,jdbcType=CHAR},
+            </if>
+            <if test="creater != null">
+                CREATER = #{creater,jdbcType=VARCHAR},
+            </if>
+            <if test="itemcreateat != null">
+                itemCreateAt = #{itemcreateat,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updater != null">
+                UPDATER = #{updater,jdbcType=VARCHAR},
+            </if>
+            <if test="itemupdateat != null">
+                itemUpdateAt = #{itemupdateat,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+            where itemID = #{itemid,jdbcType=INTEGER}
+            and itemCode = #{itemcode,jdbcType=CHAR}
+    </update>
+    <delete id="deleteSignalSourcePage">
+        delete from tb_natmeha_signal_source where itemID = #{itemID}
+    </delete>
+
+    <select id="querySignalSourceList" resultType="com.eight.gytManage.pojo.Tb_natmeha_signal_source">
+        select 
+        <include refid="column"/>
+        from tb_natmeha_signal_source
+    </select>
+
+    <select id="querySignalSourceByID" parameterType="com.eight.gytManage.pojo.Tb_natmeha_signal_source" resultType="com.eight.gytManage.pojo.Tb_natmeha_signal_source">
+        select
+        <include refid="column" />
+        from tb_natmeha_signal_source
+        where itemID = #{itemid,jdbcType=INTEGER}
+        and itemCode = #{itemcode,jdbcType=CHAR}
+    </select>
+    
+    <select id="querySignalSourcePage" resultType="com.eight.gytManage.pojo.Tb_natmeha_signal_source">
+        select
+        <include refid="column"/>
+        from tb_natmeha_signal_source
+        <where>
+            <if test="param != null">
+                and DOCTOR_CODE like "%"#{param}"%"
+            </if>
+        </where>
+        limit #{signalSourcePage.startIndex},#{signalSourcePage.singlePageSize}
+    </select>
+
+</mapper>
